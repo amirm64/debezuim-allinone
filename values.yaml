@@ -8,6 +8,26 @@ debezium:
 
 kafka:
   ssl_enabled: False
-  bootstrap_servers: "kafka-cp-kafka.kafka.svc.cluster.local"
+  bootstrap_servers: ""
   # truststore_jks:
   # jaas_conf:
+
+gui:
+  enabled: true
+  replicaCount: 1
+  image:
+    registry: 
+    name: 
+    tag: 
+  imagePullSecrets:
+    # - regcred
+  resources:
+    # requests:
+    #   cpu: "20m"
+    #   memory: "55M"
+    # limit:
+    #   cpu: "1"
+    #   memory: "512m"
+  autoScaling:
+    enabled: false
+  
