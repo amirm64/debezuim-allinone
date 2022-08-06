@@ -11,3 +11,13 @@ connector: {{ include "debezium.name" . }}
 {{ include "debezium.selectorLabels" . }}
 managed-by: {{ .Release.Service | lower }}
 {{- end }}
+
+{{- define "debezium-ui.selectorLabels" -}}
+app: {{ .Chart.Name }}-ui
+connector: {{ include "debezium-ui.name" . }}
+{{- end }}
+
+{{- define "debezium-ui.labels" -}}
+{{ include "debezium-ui.selectorLabels" . }}
+managed-by: {{ .Release.Service | lower }}
+{{- end }}
